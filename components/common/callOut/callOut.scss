@@ -1,0 +1,43 @@
+@import '../../../styling/global/globalBundle';
+
+.callOut {
+  // min-height: 75%;
+  // min-width: 40%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $gutter;
+
+  .callOutTitle {
+    font-size: 3.5em;
+    font-weight: lighter;
+    color: $red;
+  }
+
+  p {
+    color: $dark-blue;
+  }
+
+  .button {
+    margin-top: $gutter / 2;
+  }
+}
+// @media screen and (min-width: 769px){
+//   .callOut {
+//     max-width: 40%;
+//   }
+// }
+//
+// @media screen and (max-width: 768px) {
+//   .callOut {
+//     .callOutTitle {
+//       font-size: 40px;
+//     }
+//     .button {
+//       margin-top: 10px;
+//     }
+//   }
+// }

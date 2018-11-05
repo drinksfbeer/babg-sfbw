@@ -1,0 +1,54 @@
+@import '../../../styling/global/globalBundle';
+
+.callOutWithImage {
+  padding: 0 100px;
+  display: flex;
+  align-items: center;
+  padding: $gutter * 2 $gutter;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  @include bp(small) {
+    padding: $gutter* 3 $gutter / 2;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  &.callOutRight {
+    .callOut {
+      grid-column-start: 5;
+      grid-column-end: 9;
+    }
+  }
+
+  &.callOutLeft {
+    .callOut {
+      grid-column-start: 1;
+      grid-column-end: 5;
+    }
+    // justify-content: flex-start;
+  }
+
+  &.callOutCenter {
+    .callOut {
+      grid-column-start: 3;
+      grid-column-end: 7;
+    }
+  }
+
+  .callOut {}
+}
+// .fullWidthImage {
+//   padding: 0 100px;
+//   display: flex;
+//   align-items: center;
+// }
+//
+//
+//
+// @media screen and (max-width: 768px) {
+//   .fullWidthImage {
+//     padding: 0 50px;
+//     justify-content: center;
+//   }
+// }

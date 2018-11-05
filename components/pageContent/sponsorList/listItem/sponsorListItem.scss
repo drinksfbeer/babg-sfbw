@@ -1,0 +1,33 @@
+@import '../../../../styling/global/globalBundle';
+
+.sponsorListItem {
+  display: block;
+  padding: $gutter;
+
+  &:hover {
+    .sponsorDescription {
+      margin-top: 20px;
+      display: block;
+    }
+  }
+}
+
+.sponsorDescription {
+  display: none;
+}
+
+.sponsorListItem.blue {
+  border: 1px solid $light-blue;
+}
+
+.sponsorListItem.orange {
+  border: 1px solid $orange;
+}
+
+.sponsorListItem.green {
+  border: 1px solid $green;
+}
+
+.sponsorListItem.red {
+  border: 1px solid $red;
+}

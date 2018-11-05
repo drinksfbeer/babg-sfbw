@@ -1,0 +1,115 @@
+@mixin main-font {
+  font-family: $primary-font-family;
+}
+@mixin secondary-font {
+  font-family: $secondary-fontFamily;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #808080;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include main-font;
+  font-weight: normal;
+  line-height: 1;
+  margin: $gutter / 4 0;
+  color: $blue;
+  @include bp(small) {
+    margin: $gutter / 6 0;
+  }
+
+  &.secondary-font {
+    @include secondary-font;
+  }
+}
+$font-size-small: 0.65em;
+$font-size-medium: 0.86em;
+$font-size-large: 1.25em;
+$heading-scale: 3; // amount of px headings grow from h6 to h1
+@mixin font-size-small {
+  font-size: $font-size-small;
+}
+@mixin font-size-medium {
+  font-size: $font-size-medium;
+}
+@for $i from 1 through 6 {
+  .h#{$i},
+  h#{$i} {
+    font-size: $base-font-size + $heading-scale * (6 - $i);
+    @include bp(small) {
+      font-size: $base-font-size / 1.5 + $heading-scale * (6 - $i);
+    }
+
+    &.twoX {
+      font-size: $base-font-size + ($heading-scale * 2) * (6 - $i);
+    }
+  }
+}
+
+.text-center {
+  text-align: center;
+
+  svg {
+    align-self: center;
+    justify-content: center;
+  }
+  // a {
+  //   text-align: center;
+  //   width: 100%;
+  //   display: block;
+  //
+  //   &.button {
+  //     width: inherit !important;
+  //     display: inherit !important;
+  //   }
+  // }
+  & > * {
+    text-align: center;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: $gutter / 2 0;
+  padding: 0;
+  width: 100%;
+
+  &.horizontal {
+    flex-direction: row;
+
+    li {
+      width: auto;
+    }
+  }
+
+  li {
+    width: 100%;
+  }
+}
+
+p {
+  // font-family: $primary-font-family;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+a {
+  text-decoration: none;
+  color: $blue;
+  line-height: 1.6em;
+}

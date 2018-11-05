@@ -1,0 +1,11 @@
+@import '../../../styling/global/globalBundle';
+
+.richText {
+  ul {
+    margin-left: $gutter / 2;
+
+    li {
+      margin: $gutter / 5 0;
+    }
+  }
+}

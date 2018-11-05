@@ -1,0 +1,35 @@
+@mixin global-section {
+  padding: $gutter * 1.5 0;
+}
+
+$section-gutter: 30px;
+
+
+@mixin section-transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin section-transition-global {
+  @include section-transition(all .35s ease);
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin transition-global {
+  @include transition(all .35s ease);
+}
+
+
+@mixin pointer {
+  cursor: pointer;
+}

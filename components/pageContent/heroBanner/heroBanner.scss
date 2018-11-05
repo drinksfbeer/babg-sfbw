@@ -1,0 +1,66 @@
+@import '../../../styling/global/globalBundle';
+
+.heroBanner {
+  color: $white;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: $black;
+    opacity: 0.7;
+    min-height: 100%;
+    width: 100%;
+  }
+}
+
+.button.heroButton {
+  color: $white;
+  border: 1px solid $white;
+}
+
+.heroBannerButtonGroup {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+
+  .anchorButton {
+    margin: 0 10px;
+  }
+
+  .linkButton {
+    margin: 0 10px;
+  }
+}
+
+.heroBannerTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 50px;
+  margin: 10px 0;
+}
+
+.heroBannerSubTitle {
+  position: relative;
+  z-index: 2;
+  font-size: 30px;
+  margin: 10px 0;
+}
+
+.heroBannerDescription {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  margin: 10px 0;
+}

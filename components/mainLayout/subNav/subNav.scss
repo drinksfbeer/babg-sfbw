@@ -1,0 +1,58 @@
+@import '../../../styling/global/globalBundle';
+
+.subNav {
+  display: flex;
+  background-color: $dark-blue;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  height: auto;
+  justify-content: center;
+  @include bp(small) {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px;
+  }
+
+  .hamburgerButton {
+    display: none;
+    @include bp(small) {
+      display: block;
+    }
+  }
+
+  ul {
+    justify-content: center;
+    margin: 0;
+    flex-wrap: wrap;
+
+    li {
+      @include pointer;
+      @include transition-global;
+      font-weight: normal;
+      letter-spacing: 0.09em;
+      @include main-font;
+    }
+  }
+}
+
+.subNavItem {
+  font-size: 1em;
+  padding: 16px 20px;
+
+  &.subNavActive {
+    color: $light-blue;
+  }
+
+  &:hover {
+    color: $light-blue;
+  }
+
+  &.hideActive,
+  &.hideSubNav {
+    @include bp(small) {
+      display: none;
+    }
+  }
+}

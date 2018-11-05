@@ -1,0 +1,25 @@
+@import '../../../styling/global/globalBundle';
+
+.sponsorList {
+  text-align: center;
+  // padding: 0 100px;
+  .sponsorHeader {
+    font-weight: lighter;
+  }
+
+  .blue {
+    color: $blue;
+  }
+
+  .orange {
+    color: $orange;
+  }
+
+  .green {
+    color: $green;
+  }
+
+  .red {
+    color: $red;
+  }
+}

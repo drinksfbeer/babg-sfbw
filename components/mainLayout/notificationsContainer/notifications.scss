@@ -1,0 +1,41 @@
+// `!important` is being used here because the `react-notification-system-redux`
+// injects inline styles into its components, which will override these
+// of course, you can pass `false` into the `style` prop of the `Notifications`
+// component, but then you'll need to define ALL the CSS here, so ya just fyi :)
+
+// if you do want to define all the CSS, go for it. the link is below.
+// then set: `<Notifications notifications={snack} style={false} />`
+// in `/components/common/form/formContainer.jsx`
+// once you do that, you can get rid of all of the `!important`s
+
+// here are all the styles for `react-notification-system`:
+// https://github.com/igorprado/react-notification-system/blob/master/src/styles.js#L23
+// (the `-redux` part is just a Redux wrapper of the above component)
+
+.notifications-wrapper {
+  .notifications-tr {
+    z-index: 10000 !important;
+
+    .notification {
+      border-top-color: transparent !important;
+
+      h4.notification-title {
+        font-family: Helvetica, Arial, sans-serif;
+        font-weight: normal !important;
+      }
+
+      span.notification-dismiss {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0 !important;
+        right: 10px !important;
+        bottom: 0 !important;
+        height: 95% !important;
+        font-size: 22px !important;
+        color: rgba(0, 0, 0, 0.5) !important;
+        background-color: transparent !important;
+      }
+    }
+  }
+}

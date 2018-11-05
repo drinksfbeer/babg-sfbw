@@ -1,0 +1,166 @@
+@import '../../../styling/global/globalBundle';
+$headerColor: $dark-red;
+
+.mainNav {
+  // font-size: 1.25em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background: $orange;
+  height: auto;
+  justify-content: center;
+  @include bp(small) {
+    padding: 0 !important;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100vh;
+    padding: 10px;
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    top: 0;
+
+    .linkItem.mainNavItem.hideMainNav {
+      display: none;
+    }
+  }
+
+  &.hideMainNav {
+    height: auto;
+    @include bp(small) {
+      .mainNavList {
+        display: none;
+      }
+    }
+  }
+
+  .hamburgerButton {
+    display: none;
+    color: $headerColor;
+    @include bp(small) {
+      display: block;
+    }
+  }
+}
+
+.mainNavList {
+  width: 100%;
+  @include bp(small) {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainNavMenu {
+    width: 100%;
+    margin: 0;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @include bp(small) {
+      flex-direction: column !important;
+      height: 100%;
+      align-items: center;
+    }
+
+    li {
+      @include main-font;
+    }
+  }
+
+  .social-links {
+    display: none;
+    flex-direction: row;
+    z-index: 999;
+    width: 100%;
+    justify-content: center;
+    @include bp(small) {
+      display: flex;
+    }
+
+    li {
+      padding: 10px;
+
+      a {
+        svg {
+          color: $headerColor;
+        }
+      }
+    }
+  }
+}
+
+.mobile-nav {
+  z-index: 999;
+  padding: 10px $gutter;
+  width: 100%;
+  display: none;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  @include bp(small) {
+    display: flex;
+  }
+
+  .inside {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  .SDBWMobileLogo {
+    height: 16vw;
+    width: auto;
+
+    .sfbw {
+      fill: $white;
+    }
+
+    .bridge {
+      fill: $red;
+    }
+  }
+}
+
+.mainNavItem {
+  color: $headerColor;
+  list-style: none;
+  padding: 14px 16px;
+  display: flex;
+  text-transform: uppercase;
+  letter-spacing: 0.095em;
+  @include bp(small) {
+    font-size: 150%;
+    width: 100% !important;
+    text-align: center;
+    justify-content: center;
+  }
+
+  &.mainNavActive {
+    background-color: darken($orange, 12%);
+  }
+
+  &:hover {
+    background-color: darken($orange, 6%);
+  }
+}
+//
+// @media screen and (max-width: 768px) {
+//   .mainNav {
+//     flex-direction: column;
+//     align-items: flex-start;
+//     height: auto;
+//     padding: 10px;
+//     position: fixed;
+//     z-index: 10;
+//     width: 100%;
+//     top: 0;
+//   }
+//
+//   .linkItem.mainNavItem.hideMainNav {
+//     display: none;
+//   }
+// }

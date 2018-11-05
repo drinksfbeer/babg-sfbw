@@ -1,0 +1,160 @@
+@import '../../../styling/global/globalBundle';
+
+.mainHeader {
+  padding: $gutter;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  @include bp(small) {
+    grid-template-columns: repeat(1, 1fr);
+    display: none;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-bottom: 0;
+
+    li {
+      a {
+        padding: 5px;
+        color: $blue;
+      }
+    }
+  }
+
+  .SFBWLogo {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.mainHeaderItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .description {
+    color: $dark-blue;
+    font-size: 1em;
+    margin: 0;
+    @include secondary-font;
+  }
+
+  .title {
+    color: $red;
+    margin: 0;
+    font-weight: normal;
+  }
+}
+
+.leftMainHeader {
+  text-align: center;
+  @include bp(small) {
+    display: none;
+  }
+
+  h1,
+  p {
+    margin: 0;
+  }
+
+  h1 {
+    color: $red;
+  }
+
+  p {
+    color: $dark-blue;
+    font-family: house-script, sans-serif;
+    font-size: 22px;
+  }
+}
+
+.rightMainHeader {
+  @include bp(small) {
+    display: none;
+  }
+
+  .ribbon-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+
+    .month {
+      color: $dark-blue;
+      @include secondary-font;
+      font-size: 150%;
+    }
+
+    .year {
+      color: $dark-blue;
+      @include secondary-font;
+      font-size: 150%;
+    }
+  }
+
+  .ribbon {
+    margin: $gutter / 4 0;
+    text-align: center;
+    position: relative;
+    color: white;
+
+    &::after,
+    &::before {
+      content: "";
+      width: 35px;
+      bottom: -12px;
+      position: absolute;
+      display: block;
+      border: 0.85em solid darken($red, 4%);
+      z-index: -2;
+    }
+
+    &::before {
+      left: -23px;
+      border-right-width: 20px;
+      border-left-color: transparent;
+    }
+
+    &::after {
+      right: -23px;
+      border-left-width: 20px;
+      border-right-color: transparent;
+    }
+
+    .date {
+      @include main-font;
+      letter-spacing: 0.09em;
+      width: auto;
+      padding: 12px 20px;
+      background-color: $red;
+      white-space: nowrap;
+      font-size: 1.5em;
+      font-weight: normal;
+      display: flex;
+
+      &::after,
+      &::before {
+        content: "";
+        bottom: -.5em;
+        position: absolute;
+        display: block;
+        border-style: solid;
+        border-color: darken($red, 16%) transparent transparent transparent;
+        z-index: -1;
+      }
+
+      &::before {
+        left: 0;
+        border-width: 0.5em 0 0 0.5em;
+      }
+
+      &::after {
+        right: 0;
+        border-width: 0.5em 0.5em 0 0;
+      }
+    }
+  }
+}

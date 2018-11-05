@@ -1,0 +1,11 @@
+@import '../../../styling/global/globalBundle';
+
+.pullQuote {
+  font-size: 30px;
+  padding: 40px 130px;
+}
+
+.pullQuoteText {
+  padding-left: 30px;
+  border-left: 4px solid $dark-blue;
+}

@@ -1,0 +1,149 @@
+@import '../../../styling/global/globalBundle';
+$button-padding: $gutter / 2 $gutter / 1.5;
+$button-background-color: $dark-blue;
+$button-text-color: $white;
+
+.button,
+button {
+  background-color: $button-background-color;
+  border: 0;
+  color: $button-text-color;
+  @include main-font;
+  font-size: 0.85em;
+  letter-spacing: 0.25em;
+  // @include font-weight-bold;
+  @include transition-global;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  border-radius: $globalRadius;
+  text-transform: uppercase;
+  padding: $button-padding;
+
+  &.no-link {
+    width: auto;
+    height: auto;
+    // padding: $button-padding;
+    border-radius: $globalRadius;
+  }
+  @include bp(small) {
+    width: 100%;
+  font-size: $font-size-medium;
+    padding: $button-padding / 3;
+  }
+
+  svg {
+    margin-right: $gutter / 4;
+  }
+
+  i {
+    margin-right: $gutter / 4;
+  }
+
+  &:focus,
+  &:hover {
+    @include pointer;
+    background-color: darken($button-background-color, 4%);
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border: solid 2px $button-background-color;
+    color: $button-background-color;
+
+    &:hover {
+      border-color: $blue;
+      color: $blue;
+    }
+
+    .inside,
+    a {
+      background-color: transparent;
+      color: $button-background-color;
+    }
+  }
+}
+//button
+
+.button-group {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @include bp(small) {
+    flex-direction: column;
+  }
+
+  .button {
+    margin: $gutter / 3;
+  }
+}
+@mixin button($bg, $text-color) {
+  background-color: $bg;
+  color: $text-color;
+
+  .inside,
+  a {
+    color: $text-color;
+  }
+
+  &:focus,
+  &:hover {
+    background-color: darken($bg, 10%);
+  }
+
+  &.outlined {
+    background-color: transparent;
+    border-color: $bg;
+    color: $text-color;
+
+    .inside,
+    a {
+      background-color: transparent;
+      color: $text-color;
+    }
+
+    &:hover {
+      border-color: darken($bg, 30%);
+      color: darken($text-color, 30%);
+
+      .inside,
+      a {
+        color: darken($bg, 10%);
+      }
+    }
+  }
+}
+//button mixin
+
+.button {
+  &.white {
+    @include button($white, $black);
+  }
+
+  &.outlined {
+    &.white {
+       @include button($white, $white);
+    }
+    &.gray {
+      @include button($dark-blue, $dark-blue);
+    }
+  }
+}
+
+.button {
+  &.small {
+    padding: 0;
+
+    .inside,
+    a {
+      padding: $gutter / 3 $gutter / 2.5;
+      font-size: 80%;
+    }
+  }
+}

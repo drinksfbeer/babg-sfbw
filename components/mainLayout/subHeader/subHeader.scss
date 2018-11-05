@@ -1,0 +1,23 @@
+@import '../../../styling/global/globalBundle';
+
+.subHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-blue;
+  height: auto;
+}
+
+.subHeaderTitle {
+  color: lighten($dark-blue, 10%);
+  @include secondary-font;
+  font-size: 275%;
+  margin: 0;
+  padding: $gutter / 1.5;
+  padding-top: $gutter / 1.1;
+  text-align: center;
+  @include bp(small) {
+    font-size: 1.5em;
+  }
+}

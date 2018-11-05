@@ -1,0 +1,16 @@
+@import '../../../styling/global/globalBundle';
+
+.textBlock {
+  text-align: center;
+  color: $dark-blue;
+  padding: 30px 200px;
+}
+
+.textBlockTitle {
+  font-size: 30px;
+}
+@media screen and (max-width: 768px) {
+  .textBlock {
+    padding: 30px 50px;
+  }
+}

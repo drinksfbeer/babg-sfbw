@@ -1,0 +1,116 @@
+@import '../../../styling/global/globalBundle';
+
+.textWithImage {
+  .top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text-image {
+    width: 100%;
+  }
+
+  &:active,
+  &:hover {
+    img {}
+  }
+  @include global-section;
+
+  img {
+    @include section-transition-global;
+  }
+
+  &.flipped {
+    img {}
+
+    .grid {
+      .span {
+        order: 2;
+
+        &:nth-child(2) {
+          order: 1;
+        }
+      }
+    }
+  }
+  //flipped
+
+  &.stacked {
+    .callOut {
+      text-align: center;
+
+      .title {
+        text-align: center;
+      }
+
+      .subtitle {
+        text-align: center;
+      }
+
+      .button {
+        justify-content: center;
+      }
+    }
+
+    .grid {
+      .span {
+        grid-column: span 12 !important;
+        order: 2;
+
+        &:nth-child(2) {
+          order: 1;
+        }
+      }
+    }
+
+    &.flipped {
+      .grid {
+        .span {
+          order: 1 !important;
+
+          &:nth-child(2) {
+            order: 2 !important;
+          }
+        }
+      }
+    }
+  }
+  //stacked
+}
+
+.sideImage {}
+
+.sideText {
+  color: $dark-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  .title {
+    font-weight: lighter;
+    margin: 0;
+  }
+
+  .preTitle {
+    font-family: house-script, sans-serif;
+    color: $orange;
+    font-size: 45px;
+  }
+
+  .postTitle {
+    color: $red;
+    font-size: 25px;
+  }
+
+
+}
+
+
+.hexCode {
+  .postTitle {
+    color: $white;
+  }
+}

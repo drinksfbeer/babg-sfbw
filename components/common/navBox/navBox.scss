@@ -1,0 +1,57 @@
+@import '../../../styling/global/globalBundle';
+
+.navBox {
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 30vh;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    background-color: black;
+    opacity: .7;
+    min-height: 100%;
+    width: 100%;
+    @include transition-global;
+  }
+
+  &:hover {
+     &::before  {
+       opacity: .65;
+     }
+  }
+
+  .content {
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navBoxIcon {
+    // margin: $gutter / 3 0;
+  }
+
+  .navBoxTitle {
+    margin: $gutter / 2 0;
+    color: $white;
+  }
+}
+//
+// .button.navBoxButton, .navBoxIcon, .navBoxTitle {
+//   margin: 10px 0;
+//   position: relative;
+//   z-index: 2;
+// }
+//
+// .button.navBoxButton {
+//   color: white;
+//   border: 1px solid white;
+// }

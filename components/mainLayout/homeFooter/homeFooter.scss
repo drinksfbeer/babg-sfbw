@@ -1,0 +1,69 @@
+@import '../../../styling/global/globalBundle';
+$footerColor: $dark-red;
+
+.homeFooter {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $orange;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  color: $footerColor;
+  padding: $gutter * 2 $gutter;
+
+  .SFBGLogo {
+    fill: $footerColor;
+    width: auto;
+    height: 100px;
+    margin: $gutter / 2 0;
+  }
+
+  h3 {
+    font-size: 300%;
+    color: $footerColor;
+  }
+
+  input {}
+
+  input,
+  p {
+    color: $footerColor;
+    font-weight: bold;
+  }
+
+  .social-links {
+    justify-content: center;
+
+    li {
+      a {
+        padding: 5px;
+        color: $footerColor;
+      }
+    }
+  }
+}
+
+.guild-logo-home {
+  width: 200px;
+  transform: rotate(5.6552deg);
+}
+
+.footerNav {
+  justify-content: center;
+  flex-wrap: wrap;
+
+  li {
+    a {
+      text-decoration: none;
+      color: $footerColor;
+      font-weight: bold;
+      padding: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      @include main-font;
+    }
+  }
+}

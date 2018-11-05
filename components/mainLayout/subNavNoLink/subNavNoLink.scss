@@ -1,0 +1,53 @@
+// @import '../../../styling/global/globalBundle';
+//
+// .subNavNoLink {
+//   display: flex;
+//   background-color: $dark-blue;
+//   color: white;
+//   .hamburgerButton {
+//     display: none;
+//   }
+// }
+//
+// .subNavNoLinkItem {
+//   cursor: pointer;
+//   margin: 0 25px;
+//   font-size: 1.4em;
+// }
+//
+// @media screen and (min-width: 769px) {
+//   .subNavNoLink {
+//     flex-direction: row;
+//     align-items: center;
+//     height: 70px;
+//     padding: 0 100px;
+//     .hamburgerButton {
+//       display: none;
+//     }
+//   }
+// }
+//
+// @media screen and (max-width: 768px) {
+//   .subNavNoLink {
+//     flex-direction: column;
+//     align-items: flex-start;
+//     height: auto;
+//     padding: 10px;
+//     width: 100%;
+//     top: 0;
+//     .hamburgerButton {
+//       display: block;
+//     }
+//   }
+//
+//   .hamburgerButton {
+//     display: block;
+//   }
+//
+//   .subNavNoLinkItem {
+//     margin: 15px;
+//   }
+//   .subNavNoLinkItem.hideActive {
+//     display: none;
+//   }
+// }

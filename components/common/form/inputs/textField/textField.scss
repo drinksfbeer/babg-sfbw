@@ -1,0 +1,45 @@
+@import '../../../../../styling/global/globalBundle.scss';
+
+$fontSize: 125%;
+$labelFontColor: lighten(black, 25%);
+$errorFontSize: 100%;
+$errorFontColor: #F44336;
+
+.textField {
+  display: flex;
+  flex-direction: column;
+
+  .labels {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+
+    label {
+      @include main-font;
+      font-size: $fontSize;
+      color: $labelFontColor;
+    }
+
+    .errorMessage {
+      font-size: $errorFontSize;
+      font-variant: small-caps;
+      color: $errorFontColor;
+      text-transform: lowercase;
+    }
+  }
+
+  input {
+    padding: 15px 25px;
+    font-size: $fontSize;
+    background-color: darken(white, 2.5%);
+    border: 1px solid transparent;
+    outline-style: none;
+    @include transition-global;
+
+    &:focus {
+      background-color: white;
+      border-color: darken(white, 25%);
+    }
+  }
+}
